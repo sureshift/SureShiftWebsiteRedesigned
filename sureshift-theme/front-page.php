@@ -86,18 +86,42 @@
     <div class="svc-grid">
       <?php
       $svcs = array(
-        array('Household Moving',    'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10', 'household-moving',   'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&q=75&auto=format'),
-        array('Office Shifting',     'M2 20h20M6 20V4h12v16M10 9h4M10 13h4',                        'office-moving',      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=480&q=75&auto=format'),
-        array('International Moving','M12 2a10 10 0 100 20A10 10 0 0012 2z M2 12h20',               'international-moving','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=480&q=75&auto=format'),
-        array('Car Transport',       'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z','car-transport','https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=480&q=75&auto=format'),
-        array('Bike Transport',      'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11 M12 17h9',             'bike-transport',     'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&q=75&auto=format'),
-        array('Secure Storage',      'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.68 0C7.5 20.5 4 18 4 13V6l8-3 8 3v7z','secure-storage','https://images.unsplash.com/photo-1553413077-190dd305871c?w=480&q=75&auto=format'),
-        array('Fine Arts Moving',    'M2 20h20M4 20V8l8-6 8 6v12',                                  'fine-arts',          'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=480&q=75&auto=format'),
-        array('Commercial Moving',   'M3 9l9-7 9 7v11H3V9z',                                        'commercial-moving',  'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=480&q=75&auto=format'),
-        array('Courier Services',    'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z','courier','https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=480&q=75&auto=format'),
-        array('Truck Rental',        'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z',                          'truck-rental',       'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=480&q=75&auto=format'),
-        array('Last Mile Delivery',  'M5 12h14M12 5l7 7-7 7',                                       'last-mile',          'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=480&q=75&auto=format'),
-        array('ODC Consignment',     'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4','odc',          'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=480&q=75&auto=format'),
+        array('Household Moving',
+          'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10 M12 7v.01',
+          'household-moving', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&q=75&auto=format'),
+        array('Office Shifting',
+          'M2 20h20M6 20V4h12v16M10 9h4M10 13h4M10 17h4',
+          'office-moving', 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=480&q=75&auto=format'),
+        array('International Moving',
+          'M12 2a10 10 0 100 20A10 10 0 0012 2z M2 12h20 M12 2a15.3 15.3 0 000 20M12 2a15.3 15.3 0 010 20',
+          'international-moving', 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=480&q=75&auto=format'),
+        array('Car Transport',
+          'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2 M9 21a2 2 0 100-4 2 2 0 000 4z M15 21a2 2 0 100-4 2 2 0 000 4z',
+          'car-transport', 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=480&q=75&auto=format'),
+        array('Bike Transport',
+          'M12 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12h-2 M9 9.5L12 3l1.5 3h3l-1.5 2.5 M15 9l3 3',
+          'bike-transport', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&q=75&auto=format'),
+        array('Secure Storage',
+          'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4 M12 12v4',
+          'secure-storage', 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=480&q=75&auto=format'),
+        array('Fine Arts Moving',
+          'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+          'fine-arts', 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=480&q=75&auto=format'),
+        array('Commercial Moving',
+          'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
+          'commercial-moving', 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=480&q=75&auto=format'),
+        array('Courier Services',
+          'M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16',
+          'courier', 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=480&q=75&auto=format'),
+        array('Truck Rental',
+          'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z',
+          'truck-rental', 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=480&q=75&auto=format'),
+        array('Last Mile Delivery',
+          'M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h2m0 0h8m-8 0a2 2 0 104 0m4 0a2 2 0 104 0m1-10h2l2 5v3h-4m0-8H9',
+          'last-mile', 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=480&q=75&auto=format'),
+        array('ODC Consignment',
+          'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+          'odc', 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=480&q=75&auto=format'),
       );
       foreach ($svcs as $svc) {
         $name = $svc[0]; $path = $svc[1]; $slug = $svc[2]; $img = $svc[3];
@@ -145,12 +169,18 @@
         <div class="why-feats">
           <?php
           $feats = array(
-            array('Zero Damage Guarantee',   'We pack, protect and deliver with a zero-damage guarantee.', 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.68 0C7.5 20.5 4 18 4 13V6l8-3 8 3v7z M9 12l2 2 4-4'),
-            array('Dedicated Move Manager',  'One point of contact from booking to final delivery.',       'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2 M12 11a4 4 0 100-8 4 4 0 000 8z'),
-            array('GPS Live Tracking',       'Track your belongings on a live map 24x7.',                  'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 10a1 1 0 11-2 0 1 1 0 012 0z'),
-            array('Free Pre-Move Survey',    'Expert home assessment at zero cost before your move.',      'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2 M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'),
-            array('IBA Approved Bilty',      'Legally certified bilty for all interstate consignments.',   'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'),
-            array('1,500+ GPS Fleet',        'Containerised trucks with real-time location tracking.',     'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 M18.5 21a2.5 2.5 0 100-5'),
+            array('Zero Damage Guarantee',   'We pack, protect and deliver with a zero-damage guarantee.',
+              'M9 12l2 2 4-4m-6.364 1.364A9 9 0 1121 12a9 9 0 01-12.728 5.364z'),
+            array('Dedicated Move Manager',  'One point of contact from booking to final delivery.',
+              'M16 11c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z M3 20c0-3.314 4.03-6 9-6s9 2.686 9 6 M12 3v2 M12 19v2 M4.22 4.22l1.42 1.42 M18.36 18.36l1.42 1.42'),
+            array('GPS Live Tracking',       'Track your belongings on a live map 24x7.',
+              'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z M3 20h18'),
+            array('Free Pre-Move Survey',    'Expert home assessment at zero cost before your move.',
+              'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10 M12 7v.01'),
+            array('IBA Approved Bilty',      'Legally certified bilty for all interstate consignments.',
+              'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z M14 2v6h6 M9 13h6 M9 17h6 M9 9h2'),
+            array('1,500+ GPS Fleet',        'Containerised trucks with real-time location tracking.',
+              'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M10 6H6 M10 9H6'),
           );
           foreach ($feats as $f) {
           ?>
@@ -180,12 +210,18 @@
     <div class="stats-grid">
       <?php
       $stats = array(
-        array('38+',   'Years of Experience',   'M12 2a10 10 0 100 20A10 10 0 0012 2z M12 6v6l4 2'),
-        array('664+',  'Service Locations',     'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z M12 10a1 1 0 11-2 0 1 1 0 012 0z'),
-        array('88',    'Countries Covered',     'M12 2a10 10 0 100 20A10 10 0 0012 2z M2 12h20'),
-        array('65K+',  'Moves Every Year',      'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'),
-        array('75+',   'Branches PAN India',    'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z'),
-        array('1500+', 'Containerised Trucks',  'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z'),
+        array('38+',   'Years of Experience',
+          'M12 2a10 10 0 100 20A10 10 0 0012 2z M12 6v6l4 2'),
+        array('664+',  'Service Locations',
+          'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'),
+        array('88',    'Countries Covered',
+          'M12 2a10 10 0 100 20A10 10 0 0012 2z M2 12h20 M12 2a15.3 15.3 0 000 20M12 2a15.3 15.3 0 010 20'),
+        array('65K+',  'Moves Every Year',
+          'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4'),
+        array('75+',   'Branches PAN India',
+          'M2 20h20M6 20V4h12v16M10 9h4M10 13h4M10 17h4M6 20v-4h4v4'),
+        array('1500+', 'Containerised Trucks',
+          'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M10 6l-4 4 M3 12h4'),
       );
       foreach ($stats as $s) {
       ?>
