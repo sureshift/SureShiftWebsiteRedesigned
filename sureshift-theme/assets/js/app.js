@@ -101,7 +101,7 @@
     },
     {
       id: 'bike', label: 'Bike Transport', hint: 'Two-wheeler transport with full safety packaging',
-      ico: 'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11 M12 17h9',
+      ico: 'M5.5 17.5a3 3 0 100-6 3 3 0 000 6z M18.5 17.5a3 3 0 100-6 3 3 0 000 6z M8 14.5l2.5-4 3.5-1.5L16 6l-3 1 M5.5 14.5h3 M16 6h2 M8 14.5l5.5-7',
       fields: [
         { id:'name',      label:'Full Name',         type:'text',   ph:'Rohit Verma',               req:true,  ico:'user' },
         { id:'phone',     label:'Mobile Number',     type:'tel',    ph:'98765 43210',                req:true,  ico:'phone' },
@@ -118,7 +118,7 @@
     },
     {
       id: 'storage', label: 'Storage', hint: 'Climate-controlled secure storage facilities',
-      ico: 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.68 0C7.5 20.5 4 18 4 13V6l8-3 8 3v7z',
+      ico: 'M3 9h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z M3 9l2-5h14l2 5 M12 9v12 M8 14h8 M3 9h18',
       fields: [
         { id:'name',         label:'Full Name',        type:'text',   ph:'Sunita Kapoor',  req:true,  ico:'user' },
         { id:'phone',        label:'Mobile Number',    type:'tel',    ph:'98765 43210',     req:true,  ico:'phone' },
@@ -190,7 +190,7 @@
     },
     {
       id: 'truck', label: 'Truck Rental', hint: 'Hire trucks on-demand for any type of load',
-      ico: 'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 M18.5 21a2.5 2.5 0 100-5',
+      ico: 'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M4 8h8 M1 12h15',
       fields: [
         { id:'name',       label:'Full Name',           type:'text',   ph:'Manoj Tiwari',          req:true,  ico:'user' },
         { id:'phone',      label:'Mobile Number',       type:'tel',    ph:'98765 43210',             req:true,  ico:'phone' },
@@ -379,7 +379,7 @@
       sh.type = 'hidden'; sh.name = 'service'; sh.value = svc.label;
       fieldsEl.appendChild(sh);
 
-      if (stepEl) stepEl.textContent = svc.fields.length + ' fields';
+      if (stepEl) { stepEl.textContent = svc.fields.length + ' fields'; stepEl.classList.add('active'); }
       updateBar();
     }
 
