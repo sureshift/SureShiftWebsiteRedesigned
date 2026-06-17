@@ -63,7 +63,7 @@ add_action('wp_head', function () {
         'url'         => 'https://www.sureshift.in',
         'description' => "India's most trusted packers and movers since 1987.",
         'telephone'   => '+919073291732',
-        'email'       => 'care@sureshift.in',
+        'email'       => 'info@sureshift.in',
         'address'     => array(
             '@type'           => 'PostalAddress',
             'streetAddress'   => 'P Block, Plot 131, Gopal Nagar Ext, Najafgarh',
@@ -112,7 +112,7 @@ function ss_quote_handler() {
 
     $headers = array(
         'Content-Type: text/plain; charset=UTF-8',
-        'From: Sure Shift Website <care@sureshift.in>',
+        'From: Sure Shift Website <info@sureshift.in>',
     );
     if (!empty($email)) {
         $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
@@ -120,7 +120,7 @@ function ss_quote_handler() {
 
     $subject = 'Quote Request — ' . $service . ' | ' . $name;
     wp_mail('sureshiftmail@gmail.com',   $subject, $body, $headers);
-    wp_mail('care@sureshift.in',         $subject, $body, $headers);
+    wp_mail('info@sureshift.in',         $subject, $body, $headers);
 
     if (!empty($email)) {
         $reply  = "Dear " . $name . ",\n\n";
@@ -129,11 +129,11 @@ function ss_quote_handler() {
         $reply .= "Our team will call you on " . $phone . " within 30 minutes.\n\n";
         $reply .= "Sure Shift Relocation Services\n";
         $reply .= "Phone: 90 732 91 732\n";
-        $reply .= "Email: care@sureshift.in\n";
+        $reply .= "Email: info@sureshift.in\n";
         $reply .= "Web: https://www.sureshift.in";
         $reply_headers = array(
             'Content-Type: text/plain; charset=UTF-8',
-            'From: Sure Shift <care@sureshift.in>',
+            'From: Sure Shift <info@sureshift.in>',
         );
         wp_mail($email, 'Your Sure Shift Quote Request', $reply, $reply_headers);
     }
