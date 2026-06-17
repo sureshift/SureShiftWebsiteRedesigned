@@ -17,7 +17,7 @@
       <p class="hero-sub">India's most awarded packers &amp; movers. 664+ locations, 75+ branches PAN India, zero damage guarantee.</p>
       <div class="hero-btns">
         <a href="#quote" class="btn-primary">Get Free Quote</a>
-        <a href="tel:9073291732" class="btn-ghost">
+        <a href="tel:+919073291732" class="btn-ghost">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Call Now
         </a>
@@ -330,9 +330,9 @@
         <p>Get a no-obligation quote in under 30 minutes. Available 24x7, 365 days a year.</p>
         <div class="cta-btns">
           <a href="#quote" class="btn-primary">Get Free Quote</a>
-          <a href="tel:9073291732" class="btn-ghost">
+          <a href="tel:+919073291732" class="btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            90 732 91 732
+            09073291732
           </a>
         </div>
         <div class="cta-certs">

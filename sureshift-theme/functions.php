@@ -66,7 +66,7 @@ add_action('wp_head', function () {
         'email'       => 'info@sureshift.in',
         'address'     => array(
             '@type'           => 'PostalAddress',
-            'streetAddress'   => 'P Block, Plot 131, Gopal Nagar Ext, Najafgarh',
+            'streetAddress'   => 'P Block, Plot No. 131, Gopal Nagar Extension, Najafgarh',
             'addressLocality' => 'New Delhi',
             'addressRegion'   => 'Delhi',
             'postalCode'      => '110043',
@@ -128,7 +128,7 @@ function ss_quote_handler() {
         $reply .= "We have received your " . $service . " quote request from " . $from . " to " . $to . ".\n";
         $reply .= "Our team will call you on " . $phone . " within 30 minutes.\n\n";
         $reply .= "Sure Shift Relocation Services\n";
-        $reply .= "Phone: 90 732 91 732\n";
+        $reply .= "Phone: 09073291732\n";
         $reply .= "Email: info@sureshift.in\n";
         $reply .= "Web: https://www.sureshift.in";
         $reply_headers = array(
