@@ -10,6 +10,26 @@
           <span class="logo-text-fallback" style="display:none;color:#fff;">Sure<em>Shift</em></span>
         </a>
         <p class="ftr-brand" style="">India's most trusted packers &amp; movers since 1987. ISO certified, IBA approved, zero damage guaranteed.</p>
+
+        <address style="margin-bottom:18px;">
+          <div class="ftr-contact">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/NpAWmaxyKMbMPttF7" target="_blank" rel="noopener noreferrer">P Block, Plot No. 131, Gopal Nagar Extension, Najafgarh, New Delhi, Delhi 110043</a>
+          </div>
+          <div class="ftr-contact">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+919073291732">09073291732</a>
+          </div>
+          <div class="ftr-contact">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@sureshift.in">info@sureshift.in</a>
+          </div>
+          <div class="ftr-contact">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Mon &ndash; Sun &middot; Open 24 Hours</span>
+          </div>
+        </address>
+
         <div class="ftr-social">
           <a href="https://www.facebook.com/profile.php?id=61559606034810" target="_blank" rel="noopener noreferrer" aria-label="Facebook on Facebook">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -76,25 +96,29 @@
       </div>
 
       <div class="ftr-col">
-        <h4>Contact</h4>
-        <address>
-          <div class="ftr-contact">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <a href="https://maps.app.goo.gl/NpAWmaxyKMbMPttF7" target="_blank" rel="noopener noreferrer">P Block, Plot No. 131, Gopal Nagar Extension, Najafgarh, New Delhi, Delhi 110043</a>
-          </div>
-          <div class="ftr-contact">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            <a href="tel:+919073291732">09073291732</a>
-          </div>
-          <div class="ftr-contact">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:info@sureshift.in">info@sureshift.in</a>
-          </div>
-          <div class="ftr-contact">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Mon &ndash; Sun &middot; Open 24 Hours</span>
-          </div>
-        </address>
+        <h4>Our Presence</h4>
+        <ul>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-delhi/')); ?>">Packers &amp; Movers in Delhi</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-gurugram/')); ?>">Packers &amp; Movers in Gurugram</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-noida/')); ?>">Packers &amp; Movers in Noida</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-greater-noida/')); ?>">Packers &amp; Movers in Greater Noida</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-faridabad/')); ?>">Packers &amp; Movers in Faridabad</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-ghaziabad/')); ?>">Packers &amp; Movers in Ghaziabad</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-sonipat/')); ?>">Packers &amp; Movers in Sonipat</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-bahadurgarh/')); ?>">Packers &amp; Movers in Bahadurgarh</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-gwalior/')); ?>">Packers &amp; Movers in Gwalior</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-mumbai/')); ?>">Packers &amp; Movers in Mumbai</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-bengaluru/')); ?>">Packers &amp; Movers in Bengaluru</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-pune/')); ?>">Packers &amp; Movers in Pune</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-hyderabad/')); ?>">Packers &amp; Movers in Hyderabad</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-chennai/')); ?>">Packers &amp; Movers in Chennai</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-kolkata/')); ?>">Packers &amp; Movers in Kolkata</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-ahmedabad/')); ?>">Packers &amp; Movers in Ahmedabad</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-jaipur/')); ?>">Packers &amp; Movers in Jaipur</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-lucknow/')); ?>">Packers &amp; Movers in Lucknow</a></li>
+          <li><a href="<?php echo esc_url(home_url('/packers-and-movers-in-chandigarh/')); ?>">Packers &amp; Movers in Chandigarh</a></li>
+          <li><a href="<?php echo esc_url(home_url('/locations/')); ?>" style="font-weight:600;">View All 664+ Locations</a></li>
+        </ul>
       </div>
 
     </div>
