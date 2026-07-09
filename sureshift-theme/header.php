@@ -6,6 +6,8 @@
 <?php if (is_front_page()): ?>
 <meta name="description" content="Sure Shift — India's most trusted packers &amp; movers since 1987. Household, office, international &amp; vehicle relocations across 664+ locations.">
 <link rel="canonical" href="<?php echo esc_url(home_url('/')); ?>">
+<?php elseif (get_query_var('ss_city') || get_query_var('ss_locations')): ?>
+<?php /* Meta description + canonical for these virtual location pages are output via wp_head in template-location.php / template-locations-index.php */ ?>
 <?php else: ?>
 <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>">
 <?php endif; ?>
