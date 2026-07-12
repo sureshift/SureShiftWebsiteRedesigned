@@ -19,5 +19,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./sureshif-theme/
-        server-dir: /public_html/test/wp-content/themes/SureShiftWebsiteRedesigned/sureshif-theme/
+        local-dir: ./sureshift-theme/
+        server-dir: /public_html/test/wp-content/themes/SureShiftWebsiteRedesigned/sureshift-theme/
