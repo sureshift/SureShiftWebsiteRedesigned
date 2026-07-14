@@ -646,6 +646,260 @@ add_action('template_redirect', function () {
 });
 
 /* ══════════════════════════════════════════════
+   SERVICE PAGES (virtual, dynamic)
+   Powers /services/{slug}/ — no WP Pages required.
+══════════════════════════════════════════════ */
+
+function ss_get_all_services() {
+    return array(
+        'household-moving' => array(
+            'name' => 'Household Moving', 'tag' => 'Most Popular',
+            'icon' => 'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10 M12 7v.01',
+            'intro' => "Complete home relocation, from a single room to a full villa — professionally packed, GPS-tracked, and backed by our zero-damage guarantee.",
+            'features' => array(
+                'Free pre-move survey to plan packing material and vehicle size',
+                'Room-wise labelled packing with quality-grade cartons and bubble wrap',
+                'Dismantling &amp; reassembly of furniture and modular units',
+                'GPS-tracked, containerised transport with live updates',
+                'Unpacking and placement assistance at your new home',
+            ),
+            'faqs' => array(
+                array('q' => 'How far in advance should I book a household move?', 'a' => 'We recommend booking at least 5-7 days in advance for a smooth survey and packing schedule, though we do accommodate urgent moves where possible.'),
+                array('q' => 'Do you provide packing material?', 'a' => 'Yes — all cartons, bubble wrap, stretch film, and protective covers are included as part of your quote.'),
+                array('q' => 'Is my furniture insured during the move?', 'a' => 'Yes, transit coverage is included and can be enhanced with additional declared-value insurance for high-value items.'),
+            ),
+        ),
+        'office-moving' => array(
+            'name' => 'Office Shifting', 'tag' => 'Zero Downtime',
+            'icon' => 'M2 20h20M6 20V4h12v16M10 9h4M10 13h4M10 17h4',
+            'intro' => "Corporate and office relocation planned around your business hours — IT equipment, workstations, and records handled with minimal disruption.",
+            'features' => array(
+                'Weekend/after-hours moving to avoid business downtime',
+                'Specialised handling for IT equipment, servers, and electronics',
+                'Systematic labelling for fast reassembly at the new office',
+                'Dedicated move manager coordinating with your facilities team',
+                'Secure handling of confidential files and documents',
+            ),
+            'faqs' => array(
+                array('q' => 'Can you move us over a weekend?', 'a' => 'Yes, weekend and after-hours moves are common for offices and can be scheduled at no extra planning cost.'),
+                array('q' => 'Do you handle server and IT equipment?', 'a' => 'Yes, our crews are trained in anti-static packing and safe handling of servers, monitors, and networking equipment.'),
+                array('q' => 'Can you help set up the new office layout?', 'a' => 'Yes, our team can place furniture and workstations per a floor plan you provide.'),
+            ),
+        ),
+        'international-moving' => array(
+            'name' => 'International Moving', 'tag' => '88+ Countries',
+            'icon' => 'M12 2a10 10 0 100 20A10 10 0 0012 2z M2 12h20 M12 2a15.3 15.3 0 000 20M12 2a15.3 15.3 0 010 20',
+            'intro' => "End-to-end international relocation — export packing, customs documentation, and destination-agent coordination to 88+ countries.",
+            'features' => array(
+                'Export-grade wooden crating for sea and air freight',
+                'Customs documentation and clearance support',
+                'Door-to-door coordination via verified destination agents',
+                'Sea (FCL/LCL) and air freight options based on timeline and budget',
+                'Marine transit insurance available for full peace of mind',
+            ),
+            'faqs' => array(
+                array('q' => 'How long does an international move take?', 'a' => 'Sea freight typically takes 4-8 weeks depending on the destination; air freight is faster but more expensive. We\'ll confirm exact timelines during your survey.'),
+                array('q' => 'Do you handle customs paperwork?', 'a' => 'Yes, we assist with export documentation and coordinate with destination agents for import clearance.'),
+                array('q' => 'Is insurance included?', 'a' => 'Basic transit liability is included; comprehensive marine insurance can be added based on declared value.'),
+            ),
+        ),
+        'car-transport' => array(
+            'name' => 'Car Transport', 'tag' => 'Enclosed Carriers',
+            'icon' => 'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2 M9 21a2 2 0 100-4 2 2 0 000 4z M15 21a2 2 0 100-4 2 2 0 000 4z',
+            'intro' => "Safe, insured car transport across India on open or enclosed carriers — ideal for relocations, dealership transfers, or online purchases.",
+            'features' => array(
+                'Open and enclosed carrier options based on budget and vehicle value',
+                'Door-to-door pickup and delivery',
+                'Pre-transport condition report with photos',
+                'GPS-tracked transport with live status updates',
+                'Transit insurance included on every consignment',
+            ),
+            'faqs' => array(
+                array('q' => 'What is the difference between open and enclosed carriers?', 'a' => 'Open carriers are more economical and suit most vehicles; enclosed carriers fully shield the car from weather and road debris, recommended for premium or vintage cars.'),
+                array('q' => 'How long does car transport take?', 'a' => 'Typically 3-7 days depending on distance, subject to route and carrier schedule.'),
+                array('q' => 'Is my car insured during transport?', 'a' => 'Yes, all vehicles are covered under transit insurance for the declared value.'),
+            ),
+        ),
+        'bike-transport' => array(
+            'name' => 'Bike Transport', 'tag' => 'Crated &amp; Secure',
+            'icon' => 'M12 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12h-2 M9 9.5L12 3l1.5 3h3l-1.5 2.5 M15 9l3 3',
+            'intro' => "Two-wheeler transport with wooden crating or padded packaging, insured and tracked door-to-door across India.",
+            'features' => array(
+                'Wooden crate or padded-cover packing based on bike value',
+                'Fuel-drain and battery-disconnect handled per safety norms',
+                'Door-to-door pickup and delivery',
+                'Real-time GPS tracking of your consignment',
+                'Insurance coverage included',
+            ),
+            'faqs' => array(
+                array('q' => 'Do I need to prepare my bike before pickup?', 'a' => 'Our crew handles fuel-draining and battery disconnection on-site; you just need to hand over the bike with its documents.'),
+                array('q' => 'How is the bike packed?', 'a' => 'Bikes are wrapped in protective covers and secured in a wooden crate or padded cover, depending on the transport mode chosen.'),
+                array('q' => 'Can I track my bike during transport?', 'a' => 'Yes, GPS tracking is provided with live status updates.'),
+            ),
+        ),
+        'secure-storage' => array(
+            'name' => 'Secure Storage', 'tag' => 'Short &amp; Long Term',
+            'icon' => 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4 M12 12v4',
+            'intro' => "Clean, secure warehousing for household or business goods — from a few weeks to several months, with full inventory tracking.",
+            'features' => array(
+                'CCTV-monitored, access-controlled warehouses',
+                'Pest-controlled and weatherproof storage units',
+                'Itemised inventory list with photo documentation',
+                'Flexible short-term and long-term plans',
+                'Easy scheduling for withdrawal or redelivery',
+            ),
+            'faqs' => array(
+                array('q' => 'What is the minimum storage duration?', 'a' => 'We offer flexible plans starting from a few weeks, with discounted rates for longer durations.'),
+                array('q' => 'Are my goods insured in storage?', 'a' => 'Yes, storage insurance is available based on the declared value of goods.'),
+                array('q' => 'Can I access my items during storage?', 'a' => 'Yes, withdrawals can be scheduled with advance notice.'),
+            ),
+        ),
+        'fine-arts' => array(
+            'name' => 'Fine Arts Moving', 'tag' => 'Museum-Grade Packing',
+            'icon' => 'M4 4h16v16H4z M4 4l7 7 M20 4l-7 7 M4 20l7-7 M20 20l-7-7',
+            'intro' => "Specialised handling for paintings, sculptures, antiques, and pianos — custom crating and climate-aware transport for irreplaceable items.",
+            'features' => array(
+                'Custom-built crates sized to each piece',
+                'Acid-free wrapping for paintings and delicate surfaces',
+                'Specialised equipment and trained crew for pianos and sculptures',
+                'Climate-conscious loading and transport planning',
+                'Enhanced declared-value insurance available',
+            ),
+            'faqs' => array(
+                array('q' => 'Can you move a piano?', 'a' => 'Yes, our crew is trained in upright and grand piano handling, including specialised dollies and ramps.'),
+                array('q' => 'How are paintings and artwork protected?', 'a' => 'Each piece is wrapped in acid-free materials and cushioned in custom crates or corner-protected packaging.'),
+                array('q' => 'Do you insure high-value art?', 'a' => 'Yes, we offer enhanced insurance based on the appraised or declared value of the item.'),
+            ),
+        ),
+        'commercial-moving' => array(
+            'name' => 'Commercial Moving', 'tag' => 'Warehouses &amp; Retail',
+            'icon' => 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
+            'intro' => "Relocation for warehouses, factories, and retail chains — machinery, racking, and bulk inventory moved with minimal business disruption.",
+            'features' => array(
+                'Planning around production or business schedules',
+                'Machinery dismantling, rigging, and reinstallation support',
+                'Bulk inventory and racking relocation',
+                'Fleet of containerised and open trucks for large volumes',
+                'Dedicated project manager for multi-day relocations',
+            ),
+            'faqs' => array(
+                array('q' => 'Can you move heavy machinery?', 'a' => 'Yes, we coordinate rigging and specialised equipment for machinery dismantling, loading, and reinstallation.'),
+                array('q' => 'Do you handle multi-location or multi-day moves?', 'a' => 'Yes, larger commercial relocations are assigned a dedicated project manager who coordinates the full timeline.'),
+                array('q' => 'Can you move during non-business hours?', 'a' => 'Yes, we regularly schedule commercial moves overnight or on weekends to avoid downtime.'),
+            ),
+        ),
+        'courier' => array(
+            'name' => 'Courier Services', 'tag' => 'Express Delivery',
+            'icon' => 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6',
+            'intro' => "Document and parcel courier across India with live tracking — reliable for both personal and business shipments.",
+            'features' => array(
+                'Pan-India pickup and delivery network',
+                'Live consignment tracking',
+                'Secure handling for documents and small parcels',
+                'Standard and express delivery options',
+                'Proof of delivery on request',
+            ),
+            'faqs' => array(
+                array('q' => 'How can I track my courier?', 'a' => 'Use the Track Shipment tool on our homepage with your consignment number for live status.'),
+                array('q' => 'What is the typical delivery time?', 'a' => 'Standard delivery is 2-5 business days depending on distance; express options are available for urgent shipments.'),
+                array('q' => 'Can I get proof of delivery?', 'a' => 'Yes, signed proof of delivery is available on request.'),
+            ),
+        ),
+        'truck-rental' => array(
+            'name' => 'Truck Rental', 'tag' => 'With or Without Driver',
+            'icon' => 'M1 3h15v13H1z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z',
+            'intro' => "Rent a truck for your own move or business haulage, with or without a driver, across a range of vehicle sizes.",
+            'features' => array(
+                'Range of vehicle sizes from mini trucks to full containers',
+                'Options with or without an experienced driver',
+                'Flexible hourly, one-way, or multi-day rentals',
+                'Well-maintained, GPS-fitted fleet',
+                'Transparent, distance-based pricing',
+            ),
+            'faqs' => array(
+                array('q' => 'Can I rent a truck without a driver?', 'a' => 'Yes, self-drive rentals are available subject to a valid commercial/light-vehicle licence and verification.'),
+                array('q' => 'What truck sizes are available?', 'a' => 'We offer a range from mini trucks (Tata Ace-type) up to large containerised trucks depending on your load.'),
+                array('q' => 'Is one-way rental available?', 'a' => 'Yes, one-way rentals between cities are available with route-based pricing.'),
+            ),
+        ),
+        'last-mile' => array(
+            'name' => 'Last Mile Delivery', 'tag' => 'For Businesses',
+            'icon' => 'M3 3h13v13H3z M16 8h4l3 3v5h-7V8z M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z',
+            'intro' => "Final-mile logistics for e-commerce and business shipments — reliable delivery to the customer's doorstep with live tracking.",
+            'features' => array(
+                'Doorstep delivery network across serviced cities',
+                'Real-time tracking for you and your customers',
+                'Cash-on-delivery collection support',
+                'Bulk and scheduled delivery runs for businesses',
+                'Proof of delivery with e-signature/photo capture',
+            ),
+            'faqs' => array(
+                array('q' => 'Do you support COD (cash on delivery)?', 'a' => 'Yes, COD collection and reconciliation is available for business clients.'),
+                array('q' => 'Can this integrate with our e-commerce operations?', 'a' => 'Yes, we support bulk manifest uploads and scheduled delivery runs — contact us to discuss integration.'),
+                array('q' => 'What cities are covered?', 'a' => 'Last-mile delivery is available across our 664+ serviced locations — check our Locations page or contact us to confirm your city.'),
+            ),
+        ),
+        'odc' => array(
+            'name' => 'ODC Consignment', 'tag' => 'Over-Dimensional Cargo',
+            'icon' => 'M1 3h20l-2 10H3z M3 13v6h16v-6 M7 19v2 M17 19v2',
+            'intro' => "Specialised transport for over-dimensional and heavy cargo, with route surveys, permits, and escort coordination.",
+            'features' => array(
+                'Route survey and feasibility assessment for oversized loads',
+                'State/inter-state permit and escort coordination',
+                'Hydraulic axle trailers and specialised low-bed trucks',
+                'Load securing engineered for irregular dimensions',
+                'End-to-end project management for industrial cargo',
+            ),
+            'faqs' => array(
+                array('q' => 'What counts as over-dimensional cargo?', 'a' => 'Any consignment exceeding standard truck dimensions or weight limits — such as industrial machinery, transformers, or wind turbine components.'),
+                array('q' => 'Do you handle permits?', 'a' => 'Yes, we coordinate the required state and inter-state permits and police escorts where mandated.'),
+                array('q' => 'How is pricing determined?', 'a' => 'Pricing depends on route survey findings, permit costs, and specialised equipment required — shared as a detailed quote after assessment.'),
+            ),
+        ),
+    );
+}
+
+add_action('init', function () {
+    add_rewrite_rule('^services/([a-z0-9-]+)/?$', 'index.php?ss_service=$matches[1]', 'top');
+
+    if (get_option('ss_service_rules_flushed') !== SS_LOCATION_RULES_VERSION) {
+        flush_rewrite_rules();
+        update_option('ss_service_rules_flushed', SS_LOCATION_RULES_VERSION);
+    }
+});
+
+add_filter('query_vars', function ($vars) {
+    $vars[] = 'ss_service';
+    return $vars;
+});
+
+add_filter('pre_get_document_title', function ($title) {
+    $slug = get_query_var('ss_service');
+    if (!empty($slug)) {
+        $services = ss_get_all_services();
+        if (isset($services[$slug])) {
+            return $services[$slug]['name'] . ' | Free Quote — Sure Shift';
+        }
+    }
+    return $title;
+});
+
+add_action('template_redirect', function () {
+    global $wp_query;
+
+    $slug = get_query_var('ss_service');
+    if (!empty($slug)) {
+        $services = ss_get_all_services();
+        if (isset($services[$slug])) {
+            $wp_query->is_404 = false;
+            status_header(200);
+            $tpl = locate_template('template-service.php');
+            if ($tpl) { include $tpl; exit; }
+        }
+    }
+});
+
+/* ══════════════════════════════════════════════
    COMPANY PAGES (virtual, dynamic)
    Powers /blog/, /careers/, /contact-us/, /pay-online/
    and /become-our-partner/ — no WP Pages required.
