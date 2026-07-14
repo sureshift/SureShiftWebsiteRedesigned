@@ -156,6 +156,76 @@ function ss_track_handler() {
     wp_send_json_success(array('redirect' => 'https://www.sureshift.in/tracking/?id=' . urlencode($id)));
 }
 
+/* ── CONTACT AJAX ── */
+add_action('wp_ajax_ss_contact',        'ss_contact_handler');
+add_action('wp_ajax_nopriv_ss_contact', 'ss_contact_handler');
+function ss_contact_handler() {
+    $nonce = isset($_POST['nonce']) ? sanitize_text_field($_POST['nonce']) : '';
+    if (!wp_verify_nonce($nonce, 'ss_nonce')) {
+        wp_send_json_error(array('msg' => 'Security check failed. Please refresh the page.'));
+    }
+    $name    = sanitize_text_field(isset($_POST['name'])    ? $_POST['name']    : '');
+    $phone   = sanitize_text_field(isset($_POST['phone'])   ? $_POST['phone']   : '');
+    $email   = sanitize_email(isset($_POST['email'])        ? $_POST['email']   : '');
+    $subject = sanitize_text_field(isset($_POST['subject']) ? $_POST['subject'] : 'General Enquiry');
+    $message = sanitize_textarea_field(isset($_POST['message']) ? $_POST['message'] : '');
+
+    if (empty($name) || empty($phone) || empty($message)) {
+        wp_send_json_error(array('msg' => 'Please fill all required fields.'));
+    }
+    $clean_phone = preg_replace('/\s+/', '', $phone);
+    if (!preg_match('/^[6-9][0-9]{9}$/', $clean_phone)) {
+        wp_send_json_error(array('msg' => 'Enter a valid 10-digit Indian mobile number.'));
+    }
+
+    $body  = "=== New Contact Form Message ===\n\n";
+    $body .= 'Name: ' . $name . "\n" . 'Phone: ' . $phone . "\n";
+    if (!empty($email)) { $body .= 'Email: ' . $email . "\n"; }
+    $body .= 'Subject: ' . $subject . "\n\nMessage:\n" . $message . "\n\nReceived: " . current_time('mysql');
+
+    $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: Sure Shift Website <info@sureshift.in>');
+    if (!empty($email)) { $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>'; }
+
+    wp_mail('info@sureshift.in', 'Contact Form: ' . $subject . ' — ' . $name, $body, $headers);
+
+    wp_send_json_success(array('msg' => 'Thank you ' . $name . '! We\'ll get back to you shortly.'));
+}
+
+/* ── PARTNER APPLICATION AJAX ── */
+add_action('wp_ajax_ss_partner',        'ss_partner_handler');
+add_action('wp_ajax_nopriv_ss_partner', 'ss_partner_handler');
+function ss_partner_handler() {
+    $nonce = isset($_POST['nonce']) ? sanitize_text_field($_POST['nonce']) : '';
+    if (!wp_verify_nonce($nonce, 'ss_nonce')) {
+        wp_send_json_error(array('msg' => 'Security check failed. Please refresh the page.'));
+    }
+    $name    = sanitize_text_field(isset($_POST['name'])    ? $_POST['name']    : '');
+    $phone   = sanitize_text_field(isset($_POST['phone'])   ? $_POST['phone']   : '');
+    $email   = sanitize_email(isset($_POST['email'])        ? $_POST['email']   : '');
+    $city    = sanitize_text_field(isset($_POST['city'])    ? $_POST['city']    : '');
+    $message = sanitize_textarea_field(isset($_POST['message']) ? $_POST['message'] : '');
+
+    if (empty($name) || empty($phone) || empty($city)) {
+        wp_send_json_error(array('msg' => 'Please fill all required fields.'));
+    }
+    $clean_phone = preg_replace('/\s+/', '', $phone);
+    if (!preg_match('/^[6-9][0-9]{9}$/', $clean_phone)) {
+        wp_send_json_error(array('msg' => 'Enter a valid 10-digit Indian mobile number.'));
+    }
+
+    $body  = "=== New Partner Application ===\n\n";
+    $body .= 'Name: ' . $name . "\n" . 'Phone: ' . $phone . "\n";
+    if (!empty($email)) { $body .= 'Email: ' . $email . "\n"; }
+    $body .= 'City: ' . $city . "\n\nMessage:\n" . $message . "\n\nReceived: " . current_time('mysql');
+
+    $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: Sure Shift Website <info@sureshift.in>');
+    if (!empty($email)) { $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>'; }
+
+    wp_mail('info@sureshift.in', 'Partner Application — ' . $name . ' (' . $city . ')', $body, $headers);
+
+    wp_send_json_success(array('msg' => 'Thank you ' . $name . '! Our partnerships team will contact you within 2 business days.'));
+}
+
 /* ══════════════════════════════════════════════
    LOCATION LANDING PAGES (virtual, dynamic)
    Powers /packers-and-movers-in-{city}/ and /locations/
@@ -571,6 +641,53 @@ add_action('template_redirect', function () {
         $wp_query->is_404 = false;
         status_header(200);
         $tpl = locate_template('template-sitemap.php');
+        if ($tpl) { include $tpl; exit; }
+    }
+});
+
+/* ══════════════════════════════════════════════
+   COMPANY PAGES (virtual, dynamic)
+   Powers /blog/, /careers/, /contact-us/, /pay-online/
+   and /become-our-partner/ — no WP Pages required.
+══════════════════════════════════════════════ */
+
+add_action('init', function () {
+    add_rewrite_rule('^(blog|careers|contact-us|pay-online|become-our-partner)/?$', 'index.php?ss_company=$matches[1]', 'top');
+
+    if (get_option('ss_company_rules_flushed') !== SS_LOCATION_RULES_VERSION) {
+        flush_rewrite_rules();
+        update_option('ss_company_rules_flushed', SS_LOCATION_RULES_VERSION);
+    }
+});
+
+add_filter('query_vars', function ($vars) {
+    $vars[] = 'ss_company';
+    return $vars;
+});
+
+add_filter('pre_get_document_title', function ($title) {
+    $page = get_query_var('ss_company');
+    $titles = array(
+        'blog'                => 'Blog &amp; News',
+        'careers'             => 'Careers',
+        'contact-us'          => 'Contact Us',
+        'pay-online'          => 'Pay Online',
+        'become-our-partner'  => 'Become Our Partner',
+    );
+    if (!empty($page) && isset($titles[$page])) {
+        return wp_strip_all_tags($titles[$page]) . ' | Sure Shift Relocation Services';
+    }
+    return $title;
+});
+
+add_action('template_redirect', function () {
+    global $wp_query;
+
+    $page = get_query_var('ss_company');
+    if (!empty($page)) {
+        $wp_query->is_404 = false;
+        status_header(200);
+        $tpl = locate_template('template-' . $page . '.php');
         if ($tpl) { include $tpl; exit; }
     }
 });

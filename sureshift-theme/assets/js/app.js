@@ -261,6 +261,8 @@
     initForm();
     initNav();
     initTracking();
+    initSimpleForm('contactForm', 'cfMsg', 'ss_contact', "Thank you! We'll get back to you shortly.", 'Something went wrong. Please call 90 732 91 732.');
+    initSimpleForm('partnerForm', 'pfMsg', 'ss_partner', "Thank you! Our partnerships team will contact you within 2 business days.", 'Something went wrong. Please call 90 732 91 732.');
     initScrollTop();
     initReveal();
     initSticky();
@@ -523,6 +525,73 @@
 
     btn.addEventListener('click', go);
     inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+  }
+
+  /* ══ SIMPLE FORMS (Contact, Partner) ══ */
+  function initSimpleForm(formId, msgId, ajaxAction, defaultOk, defaultErr) {
+    var form = document.getElementById(formId);
+    var msgEl = document.getElementById(msgId);
+    if (!form) return;
+
+    var submitEl = form.querySelector('button[type="submit"]');
+    var btnTxtEl = submitEl ? submitEl.querySelector('.eq-btn-txt') : null;
+    var origTxt  = btnTxtEl ? btnTxtEl.textContent : '';
+
+    function showMsg(t, c) {
+      if (!msgEl) return;
+      msgEl.className = 'eq-msg ' + c;
+      msgEl.textContent = (c === 'ok' ? '✓ ' : '⚠ ') + t;
+      msgEl.style.display = 'block';
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstErr = null;
+      form.querySelectorAll('input[required],textarea[required]').forEach(function (el) {
+        el.classList.remove('err');
+        if (!el.value.trim()) { el.classList.add('err'); if (!firstErr) firstErr = el; }
+      });
+
+      var phoneEl = form.querySelector('input[name="phone"]');
+      if (phoneEl && phoneEl.value) {
+        var ph = phoneEl.value.replace(/\s+/g, '');
+        if (!/^[6-9][0-9]{9}$/.test(ph)) {
+          phoneEl.classList.add('err');
+          if (!firstErr) firstErr = phoneEl;
+          showMsg('Enter a valid 10-digit Indian mobile number.', 'er');
+          phoneEl.focus();
+          return;
+        }
+      }
+
+      if (firstErr) { showMsg('Please fill all required fields.', 'er'); firstErr.focus(); return; }
+
+      if (submitEl) submitEl.disabled = true;
+      if (btnTxtEl) btnTxtEl.textContent = 'Sending...';
+
+      var fd = new FormData();
+      fd.append('action', ajaxAction);
+      fd.append('nonce', NONCE);
+      form.querySelectorAll('input,textarea').forEach(function (el) {
+        if (el.name) fd.append(el.name, el.value);
+      });
+
+      fetch(AJAX, { method: 'POST', body: fd, credentials: 'same-origin' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.success) {
+            showMsg((d.data && d.data.msg) || defaultOk, 'ok');
+            form.reset();
+          } else {
+            showMsg((d.data && d.data.msg) || defaultErr, 'er');
+          }
+        })
+        .catch(function () { showMsg(defaultErr, 'er'); })
+        .finally(function () {
+          if (submitEl) submitEl.disabled = false;
+          if (btnTxtEl) btnTxtEl.textContent = origTxt;
+        });
+    });
   }
 
   /* ══ SCROLL TOP ══ */
