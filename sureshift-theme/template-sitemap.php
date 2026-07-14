@@ -121,4 +121,10 @@ $ss_cities = ss_get_all_cities();
 
 </main>
 
+<style>
+@media(max-width:480px){
+  #main ul[style*="columns:2"]{columns:1!important}
+}
+</style>
+
 <?php get_footer(); ?>
