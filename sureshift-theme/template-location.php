@@ -450,7 +450,7 @@ get_header();
 details[open] summary svg{transform:rotate(180deg)}
 details summary::-webkit-details-marker{display:none}
 @media(max-width:900px){
-  section .wrap > div[style*="grid-template-columns:1.15fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important}
+  section .wrap[style*="grid-template-columns:1.15fr 1fr"]{grid-template-columns:1fr!important;gap:32px!important}
   .why-grid{grid-template-columns:1fr!important;gap:36px!important}
 }
 </style>
