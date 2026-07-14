@@ -34,7 +34,7 @@ $ss_benefits = array(
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60)">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page">Become Our Partner</span>
     </nav>
   </div>
@@ -60,7 +60,7 @@ $ss_benefits = array(
         <div class="why-feats">
           <?php foreach ($ss_benefits as $b): ?>
           <div class="why-feat">
-            <div class="why-feat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($b[2]); ?>"/></svg></div>
+            <div class="why-feat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($b[2]); ?>"/></svg></div>
             <div>
               <strong><?php echo wp_kses_post($b[0]); ?></strong>
               <p><?php echo wp_kses_post($b[1]); ?></p>
@@ -94,10 +94,10 @@ $ss_benefits = array(
           <div class="eq-foot">
             <button type="submit" class="eq-submit" id="pfSubmit">
               <span class="eq-btn-txt">Submit Application</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
             <p class="eq-note">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
               100% private &middot; No spam
             </p>
           </div>

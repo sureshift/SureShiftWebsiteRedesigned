@@ -20,8 +20,8 @@
 <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
 <?php
 $prev=get_previous_post();$next=get_next_post();
-if($prev) echo '<a href="'.get_permalink($prev).'" style="font-size:.83rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>'.get_the_title($prev).'</a>';
-if($next) echo '<a href="'.get_permalink($next).'" style="font-size:.83rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px;margin-left:auto">'.get_the_title($next).'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>';
+if($prev) echo '<a href="'.get_permalink($prev).'" style="font-size:.83rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>'.get_the_title($prev).'</a>';
+if($next) echo '<a href="'.get_permalink($next).'" style="font-size:.83rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px;margin-left:auto">'.get_the_title($next).'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>';
 ?>
 </div>
 </footer>

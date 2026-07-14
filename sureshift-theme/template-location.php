@@ -116,12 +116,12 @@ get_header();
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60)">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <a href="<?php echo esc_url(home_url('/locations/')); ?>" style="color:var(--ink-60)">Our Locations</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <?php if ($is_locality): ?>
       <a href="<?php echo esc_url($city_url); ?>" style="color:var(--ink-60)">Packers &amp; Movers in <?php echo esc_html($city_name); ?></a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page"><?php echo esc_html($locality_name); ?></span>
       <?php else: ?>
       <span style="color:var(--ink-30)" aria-current="page">Packers &amp; Movers in <?php echo esc_html($city_name); ?></span>
@@ -152,14 +152,14 @@ get_header();
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
         <a href="#quote" class="btn-primary">Get Free Quote</a>
         <a href="tel:+919073291732" class="btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Call Now
         </a>
       </div>
       <div style="display:flex;gap:18px;flex-wrap:wrap">
         <?php foreach (array('ISO 9001:2015','IBA Approved Bilty','Zero Damage Guarantee') as $badge): ?>
         <div style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:rgba(255,255,255,.55)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <?php echo esc_html($badge); ?>
         </div>
         <?php endforeach; ?>
@@ -184,10 +184,10 @@ get_header();
       <div class="eq-foot">
         <button type="button" class="eq-submit" disabled>
           <span class="eq-btn-txt">Select a Service</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
         <p class="eq-note">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           100% private &middot; No spam &middot; No obligation
         </p>
       </div>
@@ -233,12 +233,12 @@ get_header();
       <a href="<?php echo esc_url(home_url('/services/' . $slug . '/')); ?>" class="svc-card">
         <div class="svc-body" style="padding:20px">
           <div class="svc-ico">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($path); ?>"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($path); ?>"/></svg>
           </div>
           <div class="svc-info">
             <span class="svc-name"><?php echo esc_html($name); ?></span>
             <span class="svc-arr" aria-hidden="true">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </div>
@@ -311,7 +311,7 @@ get_header();
           foreach ($feats as $f): ?>
           <div class="why-feat">
             <div class="why-feat-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($f[2]); ?>"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($f[2]); ?>"/></svg>
             </div>
             <div>
               <strong><?php echo esc_html($f[0]); ?></strong>
@@ -339,7 +339,7 @@ get_header();
       foreach ($stats as $s): ?>
       <div class="stat-cell">
         <div class="stat-ico">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
         </div>
         <div class="stat-n"><?php echo esc_html($s[0]); ?></div>
         <div class="stat-l"><?php echo esc_html($s[1]); ?></div>
@@ -413,7 +413,7 @@ get_header();
       <details style="border:1px solid var(--line);border-radius:var(--r10);overflow:hidden;margin-bottom:10px" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary itemprop="name" style="font-family:var(--fh);font-size:.9rem;font-weight:600;color:var(--ink);padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;user-select:none">
           <?php echo esc_html($faq[0]); ?>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
           <p itemprop="text" style="padding:0 18px 16px;font-size:.87rem;color:var(--ink-60);line-height:1.8;background:#fff;border-top:1px solid var(--line);margin:0"><?php echo esc_html($faq[1]); ?></p>
@@ -437,7 +437,7 @@ get_header();
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <a href="#quote" class="btn-primary">Get Free Quote</a>
       <a href="tel:+919073291732" class="btn-ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         09073291732
       </a>
     </div>

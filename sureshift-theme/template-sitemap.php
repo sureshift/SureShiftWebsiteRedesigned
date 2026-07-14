@@ -60,7 +60,7 @@ $ss_cities = ss_get_all_cities();
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60)">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page">Sitemap</span>
     </nav>
   </div>

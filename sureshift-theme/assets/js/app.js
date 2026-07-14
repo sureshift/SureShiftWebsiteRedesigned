@@ -248,7 +248,7 @@
      HELPERS
   ══════════════════════════════════════════════ */
   function mkSvg(path, size) {
-    return '<svg width="' + (size||14) + '" height="' + (size||14) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"/></svg>';
+    return '<svg width="' + (size||14) + '" height="' + (size||14) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"/></svg>';
   }
   function esc(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -335,7 +335,7 @@
 
         var iw = document.createElement('div');
         iw.className = 'eq-iw';
-        iw.innerHTML = '<svg class="eq-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + (SVC_ICONS[f.ico] || SVC_ICONS.chk) + '"/></svg>';
+        iw.innerHTML = '<svg class="eq-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + (SVC_ICONS[f.ico] || SVC_ICONS.chk) + '"/></svg>';
 
         var el;
         if (f.type === 'select') {

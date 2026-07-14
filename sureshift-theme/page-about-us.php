@@ -134,7 +134,7 @@ add_action('wp_head', function() {
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60);transition:color .2s ease" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--ink-60)'">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page">About Us</span>
     </nav>
   </div>
@@ -189,7 +189,7 @@ add_action('wp_head', function() {
       foreach ($stats as $s): ?>
       <div class="stat-cell" style="padding:28px 14px;text-align:center;background:var(--ink)">
         <div class="stat-ico" style="margin:0 auto 10px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
         </div>
         <div class="stat-n"><?php echo esc_html($s[0]); ?></div>
         <div class="stat-l"><?php echo esc_html($s[1]); ?></div>
@@ -255,7 +255,7 @@ add_action('wp_head', function() {
 
         <a href="#growth-story" style="display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:var(--fh);font-size:.82rem;font-weight:600;color:var(--red)">
           Read how we grew
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
@@ -355,7 +355,7 @@ add_action('wp_head', function() {
       foreach ($diffs as $d): ?>
       <div class="why-feat reveal" style="flex-direction:column;align-items:flex-start;gap:14px">
         <div class="why-feat-ico">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($d[1]); ?>"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($d[1]); ?>"/></svg>
         </div>
         <div>
           <h3 style="font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.3"><?php echo $d[0]; ?></h3>
@@ -388,7 +388,7 @@ add_action('wp_head', function() {
           foreach ($certs as $c): ?>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff;border-radius:var(--r10);border:1px solid var(--line)">
             <div style="width:32px;height:32px;border-radius:var(--r6);background:var(--red-06);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($c[2]); ?>"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($c[2]); ?>"/></svg>
             </div>
             <div>
               <strong style="font-size:.84rem;font-weight:600;color:var(--ink);display:block;margin-bottom:3px"><?php echo $c[0]; ?></strong>
@@ -418,7 +418,7 @@ add_action('wp_head', function() {
           <div style="margin-top:22px;padding-top:20px;border-top:1px solid var(--line);text-align:center">
             <a href="<?php echo esc_url(home_url('/services/commercial-moving/')); ?>" style="font-family:var(--fh);font-size:.8rem;font-weight:600;color:var(--red);display:inline-flex;align-items:center;gap:5px">
               Corporate &amp; B2B Solutions
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
@@ -475,7 +475,7 @@ add_action('wp_head', function() {
       <details class="reveal" style="border:1px solid var(--line);border-radius:var(--r10);overflow:hidden;margin-bottom:10px;transition-delay:<?php echo $i * .04; ?>s" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary itemprop="name" style="font-family:var(--fh);font-size:.9rem;font-weight:600;color:var(--ink);padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;user-select:none">
           <?php echo esc_html($faq[0]); ?>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M6 9l6 6 6-6"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;transition:transform .2s ease"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
           <p itemprop="text" style="padding:0 18px 16px;font-size:.87rem;color:var(--ink-60);line-height:1.8;background:#fff;border-top:1px solid var(--line);margin:0"><?php echo esc_html($faq[1]); ?></p>
@@ -503,7 +503,7 @@ add_action('wp_head', function() {
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <a href="<?php echo esc_url(home_url('/#quote')); ?>" class="btn-primary">Get Free Quote</a>
         <a href="tel:+919073291732" class="btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           09073291732
         </a>
       </div>

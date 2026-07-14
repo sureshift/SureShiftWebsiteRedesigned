@@ -18,7 +18,7 @@
 <span style="font-size:.7rem;color:var(--ink-30)"><?php echo get_the_date();?></span>
 <h2 style="font-family:var(--fh);font-size:.96rem;font-weight:700;color:var(--ink);margin:6px 0 9px;line-height:1.4"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 <p style="font-size:.82rem;color:var(--ink-60);line-height:1.65"><?php the_excerpt();?></p>
-<a href="<?php the_permalink();?>" style="font-size:.79rem;font-weight:600;color:var(--red);display:inline-flex;align-items:center;gap:5px;margin-top:11px">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+<a href="<?php the_permalink();?>" style="font-size:.79rem;font-weight:600;color:var(--red);display:inline-flex;align-items:center;gap:5px;margin-top:11px">Read More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 </article>
 <?php endwhile;else:?><p style="color:var(--ink-30)">No posts found.</p><?php endif;?>

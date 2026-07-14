@@ -34,7 +34,7 @@ $ss_methods = array(
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60)">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page">Pay Online</span>
     </nav>
   </div>
@@ -54,7 +54,7 @@ $ss_methods = array(
 
       <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r14);padding:32px;text-align:center">
         <div style="width:56px;height:56px;border-radius:50%;background:var(--red-06);display:flex;align-items:center;justify-content:center;margin:0 auto 18px">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2 M9 21a2 2 0 100-4 2 2 0 000 4z M15 21a2 2 0 100-4 2 2 0 000 4z"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2 M9 21a2 2 0 100-4 2 2 0 000 4z M15 21a2 2 0 100-4 2 2 0 000 4z"/></svg>
         </div>
         <h2 style="font-family:var(--fh);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:10px">Have a Booking Reference?</h2>
         <p style="font-size:.9rem;color:var(--ink-60);line-height:1.8;margin-bottom:20px">Call or WhatsApp our billing team with your consignment/booking number and we'll send you a secure payment link instantly via SMS or email.</p>
@@ -70,7 +70,7 @@ $ss_methods = array(
         <div class="pay-methods">
           <?php foreach ($ss_methods as $m): ?>
           <div class="why-feat">
-            <div class="why-feat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($m[2]); ?>"/></svg></div>
+            <div class="why-feat-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($m[2]); ?>"/></svg></div>
             <div>
               <strong><?php echo esc_html($m[0]); ?></strong>
               <p><?php echo esc_html($m[1]); ?></p>

@@ -18,7 +18,7 @@
       <div class="hero-btns">
         <a href="#quote" class="btn-primary">Get Free Quote</a>
         <a href="tel:+919073291732" class="btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Call Now
         </a>
       </div>
@@ -46,10 +46,10 @@
       <div class="eq-foot">
         <button type="button" class="eq-submit" disabled>
           <span class="eq-btn-txt">Select a Service</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
         <p class="eq-note">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           100% private &middot; No spam &middot; No obligation
         </p>
       </div>
@@ -58,7 +58,7 @@
 
   <div class="hero-cue" aria-hidden="true">
     <span>Scroll</span>
-    <svg width="16" height="24" viewBox="0 0 16 24"><rect x="1" y="1" width="14" height="22" rx="7" stroke="rgba(255,255,255,.3)" stroke-width="1.5" fill="none"/><circle cx="8" cy="7" r="2" fill="rgba(255,255,255,.45)" class="sc"/></svg>
+    <svg width="16" height="24" viewBox="0 0 16 24"><rect x="1" y="1" width="14" height="22" rx="7" stroke="rgba(255,255,255,.3)" stroke-width="2.4" fill="none"/><circle cx="8" cy="7" r="2" fill="rgba(255,255,255,.45)" class="sc"/></svg>
   </div>
 </section>
 
@@ -134,12 +134,12 @@
         </div>
         <div class="svc-body">
           <div class="svc-ico">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($path); ?>"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($path); ?>"/></svg>
           </div>
           <div class="svc-info">
             <span class="svc-name"><?php echo esc_html($name); ?></span>
             <span class="svc-arr" aria-hidden="true">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
         </div>
@@ -186,7 +186,7 @@
           ?>
           <div class="why-feat">
             <div class="why-feat-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($f[2]); ?>"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($f[2]); ?>"/></svg>
             </div>
             <div>
               <strong><?php echo esc_html($f[0]); ?></strong>
@@ -197,7 +197,7 @@
         </div>
         <a href="<?php echo esc_url(home_url('/about-us/')); ?>" class="btn-soft" style="margin-top:24px;display:inline-flex;align-items:center;gap:7px;">
           Learn More About Us
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -227,7 +227,7 @@
       ?>
       <div class="stat-cell reveal">
         <div class="stat-ico">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="<?php echo esc_attr($s[2]); ?>"/></svg>
         </div>
         <div class="stat-n"><?php echo esc_html($s[0]); ?></div>
         <div class="stat-l"><?php echo esc_html($s[1]); ?></div>
@@ -260,7 +260,7 @@
       <div class="reveal" style="transition-delay:.1s">
         <div class="track-card">
           <div class="track-ico-wrap">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <h3>Track Your Consignment</h3>
           <p>Real-time shipment status</p>
@@ -270,7 +270,7 @@
           </div>
           <div id="trackResult" style="display:none;" role="status" aria-live="polite"></div>
           <p class="track-note">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
             Your consignment number is in your booking SMS / email
           </p>
         </div>
@@ -331,21 +331,21 @@
         <div class="cta-btns">
           <a href="#quote" class="btn-primary">Get Free Quote</a>
           <a href="tel:+919073291732" class="btn-ghost">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.14 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             09073291732
           </a>
         </div>
         <div class="cta-certs">
           <div class="cta-cert">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
             <span>ISO 9001:2015</span>
           </div>
           <div class="cta-cert">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
             <span>ISO 39001:2012</span>
           </div>
           <div class="cta-cert">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#DB2648" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
             <span>IBA Approved</span>
           </div>
         </div>

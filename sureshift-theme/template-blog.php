@@ -36,7 +36,7 @@ $ss_blog_query = new WP_Query(array(
   <div class="wrap" style="padding-top:10px;padding-bottom:10px">
     <nav aria-label="Breadcrumb" style="font-size:.76rem;color:var(--ink-60);display:flex;align-items:center;gap:6px;flex-wrap:wrap">
       <a href="<?php echo esc_url(home_url('/')); ?>" style="color:var(--ink-60)">Home</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       <span style="color:var(--ink-30)" aria-current="page">Blog &amp; News</span>
     </nav>
   </div>
@@ -87,7 +87,7 @@ $ss_blog_query = new WP_Query(array(
 
     <?php else: ?>
     <div style="text-align:center;max-width:480px;margin:0 auto;padding:40px 0">
-      <div class="why-feat-ico" style="margin:0 auto 20px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+      <div class="why-feat-ico" style="margin:0 auto 20px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
       <h2 style="font-family:var(--fh);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:10px">New Posts Coming Soon</h2>
       <p style="font-size:.9rem;color:var(--ink-60);line-height:1.8;margin-bottom:20px">We're preparing moving guides, packing checklists, and company updates. Check back soon, or follow us on social media for the latest.</p>
       <a href="<?php echo esc_url(home_url('/')); ?>" class="btn-primary" style="display:inline-flex">Back to Home</a>
