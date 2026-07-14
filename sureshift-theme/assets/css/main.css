@@ -204,6 +204,9 @@ img.vis{opacity:1!important}
 .why-badge{position:absolute;bottom:-14px;left:-14px;background:var(--red);color:#fff;border-radius:var(--r14);padding:14px 18px;text-align:center;z-index:2}
 .why-badge strong{display:block;font-family:var(--fh);font-size:1.8rem;font-weight:800;line-height:1}
 .why-badge span{font-size:.66rem;opacity:.85;display:block;margin-top:2px}
+.why-badge-alt{bottom:auto;left:auto;top:-14px;right:-14px;background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 20px rgba(17,17,17,.08)}
+.why-badge-alt strong{color:var(--red)}
+.why-badge-alt span{opacity:.6}
 .why-content{padding-top:10px}
 .why-feats{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .why-feat{display:flex;align-items:flex-start;gap:12px;padding:13px;border-radius:var(--r10);border:1px solid var(--line);background:#fff;transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
@@ -366,6 +369,7 @@ img.vis{opacity:1!important}
   .eq-svcs{grid-template-columns:repeat(3,1fr)}
   .ftr-grid{grid-template-columns:1fr}
   .why-badge{bottom:-10px;left:-10px}
+  .why-badge-alt{top:-10px;right:-10px}
   .cta-txt-col{padding:28px 20px}
   .track-card{padding:24px 16px}
   .eq-top,.eq-fields,.eq-foot{padding-left:14px;padding-right:14px}

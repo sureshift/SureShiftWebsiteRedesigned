@@ -155,11 +155,12 @@
     <div class="why-grid">
       <div class="why-imgs">
         <div class="why-main-img reveal">
-          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=640&q=80&auto=format" alt="Sure Shift packers carefully wrapping household items" loading="lazy" class="lazy" onload="this.classList.add('vis')">
+          <img src="https://images.unsplash.com/photo-1600725935160-f67ee4f6084a?w=640&q=80&auto=format" alt="Sure Shift packers carefully wrapping household items" loading="lazy" class="lazy" onload="this.classList.add('vis')">
           <div class="why-badge"><strong>38+</strong><span>Years of<br>Excellence</span></div>
         </div>
         <div class="why-sm-img reveal" style="transition-delay:.12s">
-          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=360&q=75&auto=format" alt="Sure Shift GPS tracked moving truck on Indian highway" loading="lazy" class="lazy" onload="this.classList.add('vis')">
+          <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=360&q=75&auto=format" alt="Sure Shift GPS tracked moving truck on Indian highway" loading="lazy" class="lazy" onload="this.classList.add('vis')">
+          <div class="why-badge why-badge-alt"><strong>65K+</strong><span>Moves Every<br>Year</span></div>
         </div>
       </div>
       <div class="why-content reveal" style="transition-delay:.1s">
