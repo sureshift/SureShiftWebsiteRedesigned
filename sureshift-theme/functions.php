@@ -53,6 +53,148 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('classic-theme-styles');
 }, 100);
 
+/* ── LEADS DATABASE ── */
+define('SS_LEADS_DB_VERSION', '1.0.0');
+
+function ss_create_leads_table() {
+    global $wpdb;
+    $table           = $wpdb->prefix . 'ss_leads';
+    $charset_collate = $wpdb->get_charset_collate();
+    $sql = "CREATE TABLE $table (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        form_type VARCHAR(20) NOT NULL,
+        service VARCHAR(60) NULL,
+        name VARCHAR(100) NULL,
+        phone VARCHAR(20) NULL,
+        email VARCHAR(100) NULL,
+        from_location VARCHAR(150) NULL,
+        to_location VARCHAR(150) NULL,
+        extra_data LONGTEXT NULL,
+        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY  (id),
+        KEY form_type (form_type),
+        KEY created_at (created_at)
+    ) $charset_collate;";
+    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+    dbDelta($sql);
+    update_option('ss_leads_db_version', SS_LEADS_DB_VERSION);
+}
+add_action('after_switch_theme', 'ss_create_leads_table');
+add_action('init', function () {
+    if (get_option('ss_leads_db_version') !== SS_LEADS_DB_VERSION) {
+        ss_create_leads_table();
+    }
+});
+
+/**
+ * Store one form submission. $data may contain the known columns
+ * (service, name, phone, email, from_location, to_location) plus any
+ * number of extra fields — those are kept as JSON in extra_data so
+ * every service's unique fields (move_date, it_assets, company, etc.)
+ * are preserved without schema changes.
+ */
+function ss_save_lead($form_type, $data) {
+    global $wpdb;
+    $known = array('service', 'name', 'phone', 'email', 'from_location', 'to_location');
+    $extra = array();
+    foreach ($data as $k => $v) {
+        if (!in_array($k, $known, true) && $v !== '' && $v !== null) {
+            $extra[$k] = $v;
+        }
+    }
+    $wpdb->insert($wpdb->prefix . 'ss_leads', array(
+        'form_type'     => $form_type,
+        'service'       => isset($data['service']) ? $data['service'] : null,
+        'name'          => isset($data['name']) ? $data['name'] : null,
+        'phone'         => isset($data['phone']) ? $data['phone'] : null,
+        'email'         => isset($data['email']) ? $data['email'] : null,
+        'from_location' => isset($data['from_location']) ? $data['from_location'] : null,
+        'to_location'   => isset($data['to_location']) ? $data['to_location'] : null,
+        'extra_data'    => !empty($extra) ? wp_json_encode($extra) : null,
+        'created_at'    => current_time('mysql'),
+    ));
+}
+
+/* ── LEADS ADMIN PAGE ── */
+add_action('admin_menu', function () {
+    add_menu_page('Leads', 'Leads', 'manage_options', 'ss-leads', 'ss_render_leads_page', 'dashicons-email-alt', 26);
+});
+
+function ss_render_leads_page() {
+    if (!current_user_can('manage_options')) return;
+    global $wpdb;
+    $table = $wpdb->prefix . 'ss_leads';
+
+    $per_page = 20;
+    $paged    = isset($_GET['paged']) ? max(1, (int) $_GET['paged']) : 1;
+    $offset   = ($paged - 1) * $per_page;
+
+    $filter = isset($_GET['form_type']) ? sanitize_text_field($_GET['form_type']) : '';
+    $valid_types = array('quote', 'contact', 'partner');
+    $where = in_array($filter, $valid_types, true) ? $wpdb->prepare('WHERE form_type = %s', $filter) : '';
+
+    $total = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table $where");
+    $rows  = $wpdb->get_results($wpdb->prepare("SELECT * FROM $table $where ORDER BY created_at DESC LIMIT %d OFFSET %d", $per_page, $offset));
+
+    echo '<div class="wrap"><h1>Leads</h1>';
+
+    $base_url = admin_url('admin.php?page=ss-leads');
+    $tabs     = array('' => 'All', 'quote' => 'Quote', 'contact' => 'Contact', 'partner' => 'Partner');
+    $links    = array();
+    foreach ($tabs as $key => $label) {
+        $url   = $key ? add_query_arg('form_type', $key, $base_url) : $base_url;
+        $class = ($filter === $key) ? ' class="current"' : '';
+        $links[] = '<li><a href="' . esc_url($url) . '"' . $class . '>' . esc_html($label) . '</a></li>';
+    }
+    echo '<ul class="subsubsub">' . implode(' | ', $links) . '</ul><br class="clear">';
+
+    echo '<table class="wp-list-table widefat fixed striped"><thead><tr>';
+    echo '<th>Date</th><th>Type</th><th>Service</th><th>Name</th><th>Phone</th><th>Email</th><th>From</th><th>To</th><th>Other Details</th>';
+    echo '</tr></thead><tbody>';
+
+    if ($rows) {
+        foreach ($rows as $r) {
+            $extra      = $r->extra_data ? json_decode($r->extra_data, true) : array();
+            $extra_html = '';
+            if (is_array($extra)) {
+                foreach ($extra as $k => $v) {
+                    $extra_html .= '<strong>' . esc_html(ucwords(str_replace('_', ' ', $k))) . ':</strong> ' . esc_html($v) . '<br>';
+                }
+            }
+            echo '<tr>';
+            echo '<td>' . esc_html(date_i18n('d M Y, h:i A', strtotime($r->created_at))) . '</td>';
+            echo '<td>' . esc_html(ucfirst($r->form_type)) . '</td>';
+            echo '<td>' . esc_html($r->service) . '</td>';
+            echo '<td>' . esc_html($r->name) . '</td>';
+            echo '<td>' . ($r->phone ? '<a href="tel:' . esc_attr($r->phone) . '">' . esc_html($r->phone) . '</a>' : '') . '</td>';
+            echo '<td>' . ($r->email ? '<a href="mailto:' . esc_attr($r->email) . '">' . esc_html($r->email) . '</a>' : '') . '</td>';
+            echo '<td>' . esc_html($r->from_location) . '</td>';
+            echo '<td>' . esc_html($r->to_location) . '</td>';
+            echo '<td>' . $extra_html . '</td>';
+            echo '</tr>';
+        }
+    } else {
+        echo '<tr><td colspan="9">No leads yet.</td></tr>';
+    }
+    echo '</tbody></table>';
+
+    $total_pages = (int) ceil($total / $per_page);
+    if ($total_pages > 1) {
+        echo '<div class="tablenav"><div class="tablenav-pages">';
+        echo paginate_links(array(
+            'base'      => add_query_arg('paged', '%#%'),
+            'format'    => '',
+            'prev_text' => '&laquo;',
+            'next_text' => '&raquo;',
+            'total'     => $total_pages,
+            'current'   => $paged,
+        ));
+        echo '</div></div>';
+    }
+
+    echo '</div>';
+}
+
 /* ── SCHEMA ── */
 add_action('wp_head', function () {
     if (!is_front_page()) return;
@@ -122,6 +264,20 @@ function ss_quote_handler() {
     wp_mail('sureshiftmail@gmail.com',   $subject, $body, $headers);
     wp_mail('info@sureshift.in',         $subject, $body, $headers);
 
+    $lead_data = array(
+        'service'       => $service,
+        'name'          => $name,
+        'phone'         => $phone,
+        'email'         => $email,
+        'from_location' => $from,
+        'to_location'   => $to,
+    );
+    foreach ($_POST as $k => $v) {
+        if (in_array($k, array('action','nonce','_wpnonce','name','phone','email','from','to','service'), true)) continue;
+        $lead_data[$k] = sanitize_text_field($v);
+    }
+    ss_save_lead('quote', $lead_data);
+
     if (!empty($email)) {
         $reply  = "Dear " . $name . ",\n\n";
         $reply .= "Thank you for choosing Sure Shift!\n\n";
@@ -189,6 +345,14 @@ function ss_contact_handler() {
 
     wp_mail('info@sureshift.in', 'Contact Form: ' . $subject . ' — ' . $name, $body, $headers);
 
+    ss_save_lead('contact', array(
+        'name'    => $name,
+        'phone'   => $phone,
+        'email'   => $email,
+        'subject' => $subject,
+        'message' => $message,
+    ));
+
     wp_send_json_success(array('msg' => 'Thank you ' . $name . '! We\'ll get back to you shortly.'));
 }
 
@@ -223,6 +387,14 @@ function ss_partner_handler() {
     if (!empty($email)) { $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>'; }
 
     wp_mail('info@sureshift.in', 'Partner Application — ' . $name . ' (' . $city . ')', $body, $headers);
+
+    ss_save_lead('partner', array(
+        'name'          => $name,
+        'phone'         => $phone,
+        'email'         => $email,
+        'from_location' => $city,
+        'message'       => $message,
+    ));
 
     wp_send_json_success(array('msg' => 'Thank you ' . $name . '! Our partnerships team will contact you within 2 business days.'));
 }
