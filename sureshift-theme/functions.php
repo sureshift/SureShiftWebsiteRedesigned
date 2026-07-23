@@ -93,7 +93,7 @@ function ss_quote_handler() {
     $to      = sanitize_text_field(isset($_POST['to'])      ? $_POST['to']      : '');
     $service = sanitize_text_field(isset($_POST['service']) ? $_POST['service'] : 'General');
 
-    if (empty($name) || empty($phone) || empty($from) || empty($to)) {
+    if (empty($phone) || empty($from) || empty($to)) {
         wp_send_json_error(array('msg' => 'Please fill all required fields.'));
     }
     $clean_phone = preg_replace('/\s+/', '', $phone);
@@ -118,7 +118,7 @@ function ss_quote_handler() {
         $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
     }
 
-    $subject = 'Quote Request — ' . $service . ' | ' . $name;
+    $subject = 'Quote Request — ' . $service . (!empty($name) ? ' | ' . $name : ' | ' . $phone);
     wp_mail('sureshiftmail@gmail.com',   $subject, $body, $headers);
     wp_mail('info@sureshift.in',         $subject, $body, $headers);
 
@@ -138,7 +138,8 @@ function ss_quote_handler() {
         wp_mail($email, 'Your Sure Shift Quote Request', $reply, $reply_headers);
     }
 
-    wp_send_json_success(array('msg' => 'Thank you ' . $name . '! We\'ll call you within 30 minutes.'));
+    $thanks = !empty($name) ? 'Thank you ' . $name . '! ' : 'Thank you! ';
+    wp_send_json_success(array('msg' => $thanks . 'We\'ll call you within 30 minutes.'));
 }
 
 /* ── TRACK AJAX ── */
