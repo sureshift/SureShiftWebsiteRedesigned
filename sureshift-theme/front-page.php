@@ -99,7 +99,7 @@
           'M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2 M9 21a2 2 0 100-4 2 2 0 000 4z M15 21a2 2 0 100-4 2 2 0 000 4z',
           'car-transport', 'https://images.unsplash.com/photo-1609522085278-7e60bdcf9c7c?w=480&q=75&auto=format'),
         array('Bike Transport',
-          'M12 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12m-3 0a3 3 0 106 0 3 3 0 10-6 0 M6 12h-2 M9 9.5L12 3l1.5 3h3l-1.5 2.5 M15 9l3 3',
+          'M5.5 17.5a3 3 0 100-6 3 3 0 000 6z M18.5 17.5a3 3 0 100-6 3 3 0 000 6z M8 14.5l2.5-4 3.5-1.5L16 6l-3 1 M5.5 14.5h3 M16 6h2 M8 14.5l5.5-7',
           'bike-transport', 'https://images.unsplash.com/photo-1606191027636-a5a286e8fd7a?w=480&q=75&auto=format'),
         array('Secure Storage',
           'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4 M12 12v4',
