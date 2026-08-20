@@ -11,10 +11,10 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        Trusted Since 1987 &middot; ISO 9001:2015 Certified
+        38+ Years Trusted Nationwide &middot; ISO 9001:2015 Certified
       </div>
-      <h1 class="hero-h1">Move Anywhere.<br><span>Worry-Free.</span></h1>
-      <p class="hero-sub">India's most awarded packers &amp; movers. 664+ locations, 75+ branches PAN India, zero damage guarantee.</p>
+      <h1 class="hero-h1">India's Most Trusted<br><span>Packers &amp; Movers</span></h1>
+      <p class="hero-sub">Award-winning household, office &amp; international relocation — 664+ locations, 75+ branches PAN India, zero damage guarantee.</p>
       <div class="hero-btns">
         <a href="#quote" class="btn-primary">Get Free Quote</a>
         <a href="tel:+919073291732" class="btn-ghost">
