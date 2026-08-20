@@ -48,7 +48,7 @@ add_action('wp_head', function() {
       "name": "Sure Shift Relocation Services",
       "alternateName": "Sure Shift",
       "url": "https://www.sureshift.in",
-      "logo": "https://sureshift.in/wp-content/uploads/2025/02/logo.a27ef0b398a2f4fa34b8.png",
+      "logo": "https://sureshift.in/wp-content/uploads/2026/08/logoSureshift-scaled.png",
       "foundingDate": "2023",
       "foundingLocation": {
         "@type": "Place",

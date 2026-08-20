@@ -64,7 +64,7 @@ $schema = array(
             '@type'       => 'MovingCompany',
             '@id'         => $page_url . '#business',
             'name'        => 'Sure Shift Relocation Services — ' . $place_name,
-            'image'       => 'https://sureshift.in/wp-content/uploads/2025/02/logo.a27ef0b398a2f4fa34b8.png',
+            'image'       => 'https://sureshift.in/wp-content/uploads/2026/08/logoSureshift-scaled.png',
             'url'         => $page_url,
             'telephone'   => '+919073291732',
             'email'       => 'info@sureshift.in',
@@ -202,6 +202,9 @@ get_header();
       <p style="font-family:var(--fh);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Quick Answer</p>
       <p style="font-size:.95rem;color:var(--ink);line-height:1.8">
         <strong>Sure Shift</strong> is an ISO 9001:2015 &amp; ISO 39001:2012 certified packers and movers company serving <strong><?php echo esc_html($place_name); ?></strong> with household, office, international, and vehicle relocation. Every move includes a <strong>free pre-move survey</strong>, <strong>GPS-tracked transport</strong>, and a <strong>zero-damage guarantee</strong>, backed by a dedicated move manager from booking to final delivery.
+      </p>
+      <p style="font-size:.95rem;color:var(--ink);line-height:1.8;margin-top:14px">
+        Whether you need trusted <strong>movers and packers in <?php echo esc_html($place_name); ?></strong> for a complete <strong>house shifting</strong>, a same-day local move, or interstate relocation, our locally based team plans, packs, and delivers with full transparency — so you always know your moving cost and timeline upfront.
       </p>
     </div>
   </div>
