@@ -11,8 +11,8 @@
 <?php else: ?>
 <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>">
 <?php endif; ?>
-<link rel="icon" href="https://sureshift.in/wp-content/uploads/2026/08/favicon-arrow.png" type="image/png">
-<link rel="apple-touch-icon" href="https://sureshift.in/wp-content/uploads/2026/08/favicon-arrow.png">
+<link rel="icon" href="https://sureshift.in/wp-content/uploads/2026/08/favicon-arrow-v2.png" type="image/png">
+<link rel="apple-touch-icon" href="https://sureshift.in/wp-content/uploads/2026/08/favicon-arrow-v2.png">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -23,7 +23,7 @@
   <div class="nav-wrap">
 
     <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-logo" aria-label="Sure Shift — Home">
-      <img src="https://sureshift.in/wp-content/uploads/2026/08/logo-cropped-scaled.png"
+      <img src="https://sureshift.in/wp-content/uploads/2026/08/logo-cropped-v2-scaled.png"
            alt="Sure Shift" height="36"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <span class="logo-text-fallback">Sure<em>Shift</em></span>
@@ -59,7 +59,7 @@
 <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 <nav class="nav-panel" id="navPanel" aria-hidden="true" aria-label="Mobile navigation">
   <div class="nav-panel-head">
-    <img src="https://sureshift.in/wp-content/uploads/2026/08/logo-cropped-scaled.png" alt="Sure Shift" height="28">
+    <img src="https://sureshift.in/wp-content/uploads/2026/08/logo-cropped-v2-scaled.png" alt="Sure Shift" height="28">
     <button class="nav-panel-close" id="navPanelClose" aria-label="Close menu">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
