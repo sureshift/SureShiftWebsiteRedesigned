@@ -4,7 +4,7 @@
 
       <div style="grid-column:1">
         <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="https://sureshift.in/wp-content/uploads/2026/08/logoSureshift-scaled.png"
+          <img src="https://sureshift.in/wp-content/uploads/2026/08/logo-footer-white-scaled.png"
                alt="Sure Shift Relocation Services" class="ftr-logo"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <span class="logo-text-fallback" style="display:none;color:#fff;">Sure<em>Shift</em></span>
