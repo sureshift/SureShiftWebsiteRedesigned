@@ -11,7 +11,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        38+ Years Trusted Nationwide &middot; ISO 9001:2015 Certified
+        1,000+ Team Members Nationwide &middot; ISO 9001:2015 Certified
       </div>
       <h1 class="hero-h1">India's Most Trusted<br><span>Packers &amp; Movers</span></h1>
       <p class="hero-sub">Award-winning household, office &amp; international relocation — 664+ locations, 75+ branches PAN India, zero damage guarantee.</p>
